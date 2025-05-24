@@ -4,7 +4,18 @@ class Mammal:
 
     
 class Dog(Mammal):
+    def bark(self):
+        print("bark")
     
 
-dog = Dog()
-dog.walk()
+class Cat(Mammal):
+    def meow(self):
+        print("meowwwwwwwwww")
+    
+
+
+dog1 = Dog()
+dog1.bark()
+
+cat1 = Cat()
+cat1.meow()
