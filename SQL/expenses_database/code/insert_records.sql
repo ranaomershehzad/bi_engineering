@@ -26,5 +26,14 @@ WITH (
     FIRSTROW = 2
 );
 
+BULK INSERT Categories
+FROM 'C:\Users\Omer.Shehzad\Documents\bi_engineering\SQL\expenses_database\raw_data\categories.csv'
+WITH (
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+    FIRSTROW = 2
+);
+
+SELECT * FROM Categories;
 SELECT * FROM CommBankStaging;
 SELECT *FROM AmexStaging;
