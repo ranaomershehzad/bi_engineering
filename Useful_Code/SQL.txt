@@ -1,0 +1,7 @@
+-- 1. Convert '20/12/2025' to date format in MS SQL Server
+-- SELECT  
+--     TRY_CAST(PARSE(tran_date AS DATE USING 'en-GB') AS DATE) AS tran_date,
+--     tran_details,
+--     amount
+-- FROM CommBankStaging
+-- ORDER BY tran_date;

@@ -1,6 +1,7 @@
 USE ExpensesDB;
 TRUNCATE TABLE CommBankStaging;
 TRUNCATE TABLE AmexStaging;
+TRUNCATE TABLE Categories;
 
 BULK INSERT CommBankStaging
 FROM 'C:\Users\Omer.Shehzad\Documents\bi_engineering\SQL\expenses_database\raw_data\comm_bank_jan_apr_25.csv'

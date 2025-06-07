@@ -12,7 +12,8 @@ CREATE TABLE PersonalExpenses (
    tran_date        DATE NOT NULL,
    tran_details     NVARCHAR(255),
    amount           DECIMAL(10,2) NOT NULL,
-   category         NVARCHAR(100) DEFAULT 'Unknown'
+   category         NVARCHAR(100) DEFAULT 'Unknown',
+   payment_method   NVARCHAR(8)
 );
 
 -- tran_date,tran_details,amount,category
