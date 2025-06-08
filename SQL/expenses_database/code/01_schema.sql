@@ -4,15 +4,17 @@ USE ExpensesDB;
 -- DROP TABLE PersonalExpenses;
 -- DROP TABLE Amex;
 -- DROP TABLE CommBank; 
--- DROP TABLE Categories; 
+-- DROP TABLE Categories;
+-- DROP TABLE ExpenseCategory
+
 -- PersonalExpenses
 
 CREATE TABLE PersonalExpenses (
-   tran_ID          INT IDENTITY(1,1) PRIMARY KEY,
+   tran_id          INT IDENTITY(1,1) PRIMARY KEY,
    tran_date        DATE NOT NULL,
    tran_details     NVARCHAR(255),
    amount           DECIMAL(10,2) NOT NULL,
-   category         NVARCHAR(100) DEFAULT 'Unknown',
+   cat_id           INT,
    payment_method   NVARCHAR(8)
 );
 
@@ -52,6 +54,14 @@ CREATE TABLE CommBankStaging (
 
 -- Categories
 CREATE TABLE Categories (
-   cat_name    NVARCHAR(50),
-   cat_type    NVARCHAR(20)
+   cat_id      INT PRIMARY KEY,
+   cat_type    NVARCHAR(20),
+   cat_filter  NVARCHAR(3)
+);
+
+-- Expense Categories
+CREATE TABLE ExpenseCategory (
+   exp_name    NVARCHAR(50),
+   cat_id      INT
+   FOREIGN KEY (cat_id) REFERENCES Categories(cat_id)
 );

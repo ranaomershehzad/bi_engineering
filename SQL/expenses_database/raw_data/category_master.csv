@@ -1,0 +1,20 @@
+cat_id,cat_type,cat_filter
+1,Car Expenses,Yes
+2,Dine-out,No
+3,Electricity,No
+4,Entertainment,No
+5,Grocery,No
+6,Home-decor,No
+7,Insurance,No
+8,Interest,No
+9,Mobile/Wi-Fi,No
+10,Personal,Yes
+11,Remmitance,Yes
+12,Rent,Yes
+13,Savings,Yes
+14,Shopping,No
+15,Subscription,No
+16,Tax,No
+17,Transport,No
+18,Travel,No
+19,Visa,Yes
