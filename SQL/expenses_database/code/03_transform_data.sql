@@ -1,31 +1,32 @@
 USE ExpensesDB;
 SET DATEFORMAT dmy;
 
--- Insert into the CommBank table
-TRUNCATE TABLE CommBank;
-INSERT INTO CommBank (tran_date, tran_details,amount)
-SELECT
-    TRY_CAST(tran_date AS DATE) AS tran_date,
-    tran_details,
-    amount
-FROM CommBankStaging
-WHERE 
-    amount < 0
-ORDER BY tran_date;
+-- -- Insert into the CommBank table
+-- TRUNCATE TABLE CommBank;
+-- INSERT INTO CommBank (tran_date, tran_details,amount)
+-- SELECT
+--     TRY_CAST(tran_date AS DATE) AS tran_date,
+--     tran_details,
+--     amount
+-- FROM CommBankStaging
+-- WHERE 
+--     amount < 0
+-- ORDER BY tran_date;
 
--- Insert into the Amex table
-TRUNCATE TABLE Amex;
-INSERT INTO Amex (tran_date, tran_details,amount)
-SELECT
-    TRY_CAST(tran_date AS DATE) AS tran_date,
-    tran_description,
-    amount
-FROM AmexStaging
-WHERE 
-    amount > 0
-ORDER BY tran_date; 
+-- -- Insert into the Amex table
+-- TRUNCATE TABLE Amex;
+-- INSERT INTO Amex (tran_date, tran_details,amount)
+-- SELECT
+--     TRY_CAST(tran_date AS DATE) AS tran_date,
+--     tran_description,
+--     amount
+-- FROM AmexStaging
+-- WHERE 
+--     amount > 0
+-- ORDER BY tran_date; 
 
 -- Insert all the expenses in one master table - PersonalExpenses
+
 TRUNCATE TABLE PersonalExpenses;
 
 WITH filterted_expenses AS (

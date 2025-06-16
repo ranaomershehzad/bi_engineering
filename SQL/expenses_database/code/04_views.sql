@@ -23,7 +23,8 @@ SELECT
     DATENAME(MONTH, tran_date) AS month_name,
     SUM(amount) as total_monthly_expense
 FROM PersonalExpenses pe
-WHERE category NOT IN ('Personal','Car Expenses','Visa','Remmitance','Savings','Visa')
+INNER JOIN Categories c ON pe.cat_id = c.cat_id
+WHERE c.cat_filter = 'Yes'
 GROUP BY DATEPART(MONTH, tran_date),DATEPART(YEAR, tran_date), DATENAME(MONTH, tran_date)
 -- ORDER BY DATEPART(YEAR, tran_date), DATEPART(MONTH, tran_date)
 );
